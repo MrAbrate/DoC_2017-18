@@ -1,0 +1,18 @@
+{
+  "name": "doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marc Abrate",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.5.3",
+    "pug": "^2.0.0-rc.4",
+    "uglify-es": "^3.1.5"
+  }
+}
