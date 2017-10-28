@@ -13,6 +13,14 @@ const jsFiles = [
   {
     source: ['sketches/home-sketch.js'],
     dest: 'sketches/home-sketch.js'
+  },
+  {
+    source: ['share.js'],
+    dest: 'share.js'
+  },
+  {
+    source: ['signup.js'],
+    dest: 'signup.js'
   }
 ]
 

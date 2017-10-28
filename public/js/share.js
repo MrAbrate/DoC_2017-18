@@ -1,0 +1,1 @@
+const URL_BASE="https://scratch.mit.edu/site-api/projects/in/4387897/",pageNum=1,studioEmpty=!1;get("https://scratch.mit.edu/site-api/projects/in/4387897/1").then(t=>{console.log(t)});

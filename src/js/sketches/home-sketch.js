@@ -21,6 +21,10 @@ class Dot {
   constructor(x, y) {
     this.pos = createVector(100, 100);
     this.vel = createVector();
+    var r = random(3) >= 1  ? random(100, 255): 255;
+    var g = random(3) >= 1  ? random(100, 255): 255;
+    var b = random(3) >= 1  ? random(100, 255): 255;
+    this.color = color(r, g, b);
   };
   move() {
     if (mouseIsPressed) {
@@ -34,7 +38,7 @@ class Dot {
     this.pos.add(this.vel);
   }
   show() {
-    fill('red');
+    fill(this.color);
     ellipse(this.pos.x, this.pos.y, 10);
   }
 }

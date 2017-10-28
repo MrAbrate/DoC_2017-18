@@ -7,8 +7,16 @@ const pugFiles = [
     dest: './public/index.html'
   },
   {
+    source: './src/signup.pug',
+    dest: './public/signup/index.html'
+  },
+  {
     source: './src/faq.pug',
     dest: './public/faq/index.html'
+  },
+  {
+    source: './src/share.pug',
+    dest: './public/share/index.html'
   }
 ];
 
