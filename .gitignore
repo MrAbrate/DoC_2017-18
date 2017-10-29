@@ -1,7 +1,2 @@
 node_modules
-
-# exclude everything
-public/*
-
-# exception to the rule
-!public/.gitkeep
+public
