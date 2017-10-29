@@ -1,5 +1,4 @@
-const fs = require('fs');
-const writeFile = require('./writeFile.js');
+const fs = require('fs-extra');
 const sass = require('node-sass');
 
 exports.start = function () {
@@ -17,9 +16,10 @@ function render() {
     file: srcFile
   }, (err, result) => {
     if (err) return console.log(err);
-    writeFile(outFile, result.css, function(err){
-      if (err) throw err;
-      console.log('style.css saved to /public/css.')
+
+    fs.outputFile(outFile, result.css, err => {
+      if (err) throw err; // => null
+      console.log('style.css saved to /public/css.');
     });
   });
 }

@@ -1,6 +1,5 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const pug = require('pug');
-const writeFile = require('./writeFile.js');
 const pugFiles = [
   {
     source: './src/index.pug',
@@ -37,8 +36,8 @@ function renderFile(file) {
     console.log(err);
   }
 
-  writeFile(file.dest, code, (err) => {
-    if (err) throw err;
+  fs.outputFile(file.dest, code, err => {
+    if (err) throw err; // => null
     console.log('Rendered pug file to ' + file.dest);
   });
 }

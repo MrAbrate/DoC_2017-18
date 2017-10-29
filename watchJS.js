@@ -1,6 +1,5 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const UglifyJS = require("uglify-es");
-const writeFile = require('./writeFile.js');
 
 const codeStore = {};
 
@@ -43,13 +42,14 @@ function concatinate(filename) {
   jsFiles.forEach(bundle => {
     const code = codeStore[bundle.dest];
     codeStore[bundle.dest] = '';
-    if (code) {
-      const minified = UglifyJS.minify(code);
-      writeFile(__dirname + '/public/js/' + bundle.dest, minified.code, (err) => {
-        if (err) throw err;
-        console.log(bundle.dest + " Saved");
-      });
-    }
+    if (!code) return;
+
+    const minified = UglifyJS.minify(code);
+
+    fs.outputFile(__dirname + '/public/js/' + bundle.dest, minified.code, err => {
+      if (err) throw err; // => null
+      console.log(bundle.dest + " Saved");
+    });
   });
 }
 

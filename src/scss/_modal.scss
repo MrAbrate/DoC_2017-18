@@ -7,11 +7,99 @@
   left: 0;
   right: 0;
   text-align: center;
+  overflow: scroll;
 }
+
+/* The animation code */
+@keyframes slide-down {
+    from {height: 0px;}
+    to {height: auto;}
+}
+
+
+
 
 .modal-container {
   margin: 80px 40px 40px;
   padding: 30px;
   background: white;
-  display: inline-block;
+  display: flex;
+  flex-flow: column;
+}
+
+.close-modal {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background: $dark-color;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: auto;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px tomato;
+  }
+}
+
+.instruction-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+
+.instruction-btn {
+  width: 300px;
+  height: 200px;
+  background: skyblue;
+  margin: 20px;
+  border: 4px solid $blue;
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: width 1.5s, height 1.5s;
+  .small > & {
+    width: 120px;
+    height: 60px;
+  }
+  &[data-target=codepen-instructions] {
+    background-image: url('/img/codepen-logo.png');
+    background-color: black;
+  }
+  &[data-target=scratch-instructions] {
+    background-image: url('/img/scratch-logo.png');
+    background-color: #25aff4;
+  }
+  &[data-target=thimble-instructions] {
+    background-image: url('/img/thimble-logo.svg');
+    background-color: #4bc771;
+  }
+}
+
+
+.instructions {
+  text-align: left;
+}
+
+#codepen-instructions,
+#scratch-instructions,
+#thimble-instructions {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  overflow: hidden;
+  h2 {
+    text-align: center;
+  }
+  li {
+    margin-bottom: 20px;
+  }
+  &.show {
+    display: block;
+    animation-name: slide-down;
+    animation-duration: 1.5s;
+  }
 }
