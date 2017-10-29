@@ -1,4 +1,7 @@
+$transition-timing: 1s;
+
 #share-modal {
+  display: none;
   background: rgba(0, 0, 0, 0.85);
   position: fixed;
   z-index: 100;
@@ -8,12 +11,6 @@
   right: 0;
   text-align: center;
   overflow: scroll;
-}
-
-/* The animation code */
-@keyframes slide-down {
-    from {height: 0px;}
-    to {height: auto;}
 }
 
 
@@ -59,7 +56,8 @@
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
-  transition: width 1.5s, height 1.5s;
+  transition: $transition-timing ease-in-out;
+
   .small > & {
     width: 120px;
     height: 60px;
@@ -87,10 +85,11 @@
 #scratch-instructions,
 #thimble-instructions {
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  display: none;
-  overflow: hidden;
+  margin: 0;
+  overflow-y: hidden;
+	max-height: 0px; /* approximate max height */
+
+
   h2 {
     text-align: center;
   }
@@ -98,8 +97,9 @@
     margin-bottom: 20px;
   }
   &.show {
-    display: block;
-    animation-name: slide-down;
-    animation-duration: 1.5s;
+    max-height: 500px;
+    transition: $transition-timing ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

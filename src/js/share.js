@@ -5,6 +5,14 @@
   const modal = document.querySelector('#share-modal');
   const instructionBtns = modal.querySelectorAll('.instruction-btn')
   const instructionDivs = modal.querySelectorAll('.instructions > div');
+  const close = modal.querySelector('.close-modal');
+
+  btn.onclick = function () {
+    modal.style.display = 'block';
+  };
+  close.onclick = function () {
+    modal.style.display = 'none';
+  };
 
   instructionBtns.forEach(function(btn) {
     btn.onclick = function () {
