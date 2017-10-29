@@ -2,6 +2,9 @@
 extends layout.pug
 
 block content
-    
+  .container
+    #share-modal-btn Share your code!
+  include inc/share-modal.pug
 block scripts
   script(src='/js/bundle.js')
+  script(src='/js/share.js')

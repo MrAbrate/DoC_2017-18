@@ -30,7 +30,13 @@ exports.start = function () {
 }
 
 function renderFile(file) {
-  const code = pug.renderFile(file.source);
+  let code;
+  try {
+    code = pug.renderFile(file.source);
+  } catch(err) {
+    console.log(err);
+  }
+
   writeFile(file.dest, code, (err) => {
     if (err) throw err;
     console.log('Rendered pug file to ' + file.dest);

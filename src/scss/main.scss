@@ -1,8 +1,13 @@
 @import 'colors';
 @import 'measurements';
+@import 'buttons';
+@import 'modal';
 
 * {
   box-sizing: border-box;
+}
+html {
+  position: relative;
 }
 body {
   position: relative;
@@ -15,10 +20,9 @@ body {
   position: relative;
   z-index: 5;
   width: 100%;
-  display: flex;
+  padding: $white-space;
   margin-left: auto;
   margin-right: auto;
-  padding: $white-space;
 
   @media (min-width: $medium-screen) {
     width: $medium-screen;
@@ -27,6 +31,10 @@ body {
     width: $large-screen;
     padding: $white-space;
   }
+}
+.flex-container {
+  @extend .container;
+  display: flex;
 }
 
 nav {

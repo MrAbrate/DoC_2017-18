@@ -1,1 +1,1 @@
-function get(s){return new Promise((t,e)=>{const n=new XMLHttpRequest;n.open("GET",s,!0),n.onload=function(){if(this.status>=200&&this.status<400){this.response;t(this.response)}else e(void 0)},n.onerror=function(){e(void 0)},n.send()})}
+const ajax={get:s=>new Promise((t,e)=>{const n=new XMLHttpRequest;n.open("GET",s,!0),n.onload=function(){if(this.status>=200&&this.status<400){this.response;t(this.response)}else e(void 0)},n.onerror=function(){e(void 0)},n.send()})};

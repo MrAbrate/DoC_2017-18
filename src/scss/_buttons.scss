@@ -1,0 +1,19 @@
+.share-btn {
+  padding: 12px 24px;
+  background: $green;
+  color: lighten($green, 40%);
+  font-size: 1.1rem;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    background: darken($green, 5%);
+  }
+}
+
+#share-modal-btn {
+  @extend .share-btn;
+  position: absolute;
+  right: 0;
+  top: 8px;
+}
