@@ -56,7 +56,12 @@ $transition-timing: 1s;
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
-  transition: $transition-timing ease-in-out;
+  transition: width $transition-timing, height $transition-timing, box-shadow 0.3s;
+  transition-timing-function: ease-in-out;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 12px #000;
+  }
 
   .small > & {
     width: 120px;
@@ -68,7 +73,7 @@ $transition-timing: 1s;
   }
   &[data-target=scratch-instructions] {
     background-image: url('/img/scratch-logo.png');
-    background-color: #25aff4;
+    background-color: $scratch-blue;
   }
   &[data-target=thimble-instructions] {
     background-image: url('/img/thimble-logo.svg');

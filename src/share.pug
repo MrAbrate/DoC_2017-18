@@ -2,9 +2,16 @@
 extends layout.pug
 
 block content
-  .container
+  #canvas
+  .container.share-container
     #share-modal-btn Share your code!
+
+    h2: a(href="https://scratch.mit.edu/studios/4387897/" target="_blank") Scratch Studio Projects
+    ul#scratch-gallery
+    div(style="text-align:center;"): #load-more-scratch-projects More
+
   include inc/share-modal.pug
 block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js')
   script(src='/js/bundle.js')
   script(src='/js/share.js')
