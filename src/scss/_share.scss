@@ -6,19 +6,25 @@
 }
 
 #scratch-gallery {
-  padding: 0;
   list-style: none;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   max-height: 500px;
-  overflow-y: auto;
-  border: 3px solid $scratch-blue;
-  padding: 20px;
+  overflow-y: scroll;
+  border: 2px solid $scratch-blue;
+  padding: 0px;
   & > li {
     display: inline-flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin: 20px;
+    flex: 1;
+    text-align: center;
+    border: 2px solid $scratch-blue;
+    padding: 20px;
+    transition: background-color 0.5s;
+    &:hover {
+      background: transparentize($scratch-blue, 0.5);
+    }
   }
 }

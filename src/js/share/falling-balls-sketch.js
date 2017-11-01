@@ -2,6 +2,7 @@ var r = 0;
 var bubbleR = 0;
 var bubbles = [];
 
+
 function setup() {
   const myCanvas = createCanvas(windowWidth, windowHeight);
   myCanvas.parent('canvas');
@@ -24,11 +25,11 @@ function draw() {
 
   if (mouseIsPressed) {
     bubbleR += 1;
-    noStroke();
-    fill(150);
+    stroke('black');
+    noFill();
     ellipse(mouseX, mouseY, bubbleR);
   } else if (bubbleR > 0) {
-    bubbles.push(new Bubble(mouseX, mouseY, bubbleR));
+    bubbles.push(new Bubble(mouseX, mouseY, bubbleR, random(360)));
     bubbleR = 0;
   }
 
@@ -43,11 +44,12 @@ function draw() {
 }
 
 class Bubble {
-  constructor(x, y, size) {
+  constructor(x, y, size, h) {
     this.pos = createVector(x, y);
     this.vel = createVector();
-    this.acc = createVector(0, 1);
+    this.acc = createVector(0, 0.3);
     this.size = size;
+    this.color = color('hsl(' + floor(h) + ', 80%, 65%)');
   }
   update() {
     this.vel.add(this.acc);
@@ -55,7 +57,7 @@ class Bubble {
   }
   show() {
     noStroke();
-    fill(150);
+    fill(this.color);
     ellipse(this.pos.x, this.pos.y, this.size);
   }
   outOfBounds() {
