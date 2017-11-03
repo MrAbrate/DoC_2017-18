@@ -43,7 +43,8 @@ const jsBundles = [
       ],
       'share.js'
     ),
-    new Bundle(['signup.js'], 'signup.js')
+    new Bundle(['signup.js'], 'signup.js'),
+    new Bundle(['sketches/color-picker.js'], 'sketches/color-picker.js')
 ];
 
 

@@ -16,6 +16,10 @@ const pugFiles = [
   {
     source: './src/share.pug',
     dest: './public/share/index.html'
+  },
+  {
+    source: './src/color-picker.pug',
+    dest: './public/color-picker/index.html'
   }
 ];
 
