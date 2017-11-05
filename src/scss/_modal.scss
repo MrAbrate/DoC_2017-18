@@ -1,6 +1,6 @@
 $transition-timing: 1s;
 
-#share-modal {
+.modal {
   display: none;
   background: rgba(0, 0, 0, 0.85);
   position: fixed;
@@ -13,6 +13,11 @@ $transition-timing: 1s;
   overflow: scroll;
 }
 
+#faq-modal > .modal-container {
+  max-width: 700px;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 
 

@@ -4,17 +4,29 @@
   display: inline-block;
   transition: box-shadow 0.3s, background-color 0.3s;
   transition-timing-function: ease-in-out;
+  border: none;
   &:hover {
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
   }
 }
 
+#faq-modal-btn,
 #share-modal-btn {
   @extend .btn;
   position: absolute;
   right: 0;
   top: 8px;
+}
+
+#faq-modal-btn {
+  background: $blue;
+  color: lighten($blue, 40%);
+  &:hover {
+    background: darken($blue, 5%);
+  }
+}
+#share-modal-btn {
   background: $green;
   color: lighten($green, 40%);
   &:hover {
@@ -29,5 +41,14 @@
   color: lighten(tomato, 40%);
   &:hover {
     background: darken(tomato, 5%);
+  }
+}
+
+#faq-ask-btn {
+  @extend .btn;
+  background: $blue;
+  color: lighten($blue, 40%);
+  &:hover {
+    background: darken($blue, 5%);
   }
 }

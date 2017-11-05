@@ -44,7 +44,8 @@ const jsBundles = [
       'share.js'
     ),
     new Bundle(['signup.js'], 'signup.js'),
-    new Bundle(['sketches/color-picker.js'], 'sketches/color-picker.js')
+    new Bundle(['sketches/color-picker.js'], 'sketches/color-picker.js'),
+    new Bundle(['faq/firebase-setup.js'], 'faq.js')
 ];
 
 

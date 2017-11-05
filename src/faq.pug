@@ -2,3 +2,30 @@
 extends layout.pug
 
 block content
+  .container
+    #faq-modal-btn(class="modal-btn" data-target="faq-modal") Ask a question
+    h1 Frequently Asked Questions
+    
+    #question-list
+        
+  #faq-modal.modal
+    .modal-container
+      .close-modal(data-target="faq-modal"): span X
+      #faq-form
+        .form-group
+          label(for="name") Name
+          input#name
+        .form-group    
+          label(for="question") Question
+          textarea#question(rows="4" cols="50" maxlength="500")
+        .form-group
+          button#faq-ask-btn(onclick="submitQuestion()") Ask
+          button#faq-answer-btn(style="display:none;") Answer
+        p If someone answers your question it will appear on this page.
+    
+  
+block scripts
+  script(src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js")
+  script(src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js")
+  script(src="/js/bundle.js")
+  script(src="/js/faq.js")

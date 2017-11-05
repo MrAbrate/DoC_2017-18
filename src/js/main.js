@@ -24,3 +24,27 @@ const ajax = {
     });
   }
 };
+
+(function () {
+  const modalBtns = document.querySelectorAll('.modal-btn');
+  const modalCloseBtns = document.querySelectorAll('.close-modal');
+
+  modalBtns.forEach(btn => {
+    const target = btn.getAttribute('data-target');
+    const modal = document.getElementById(target);
+    btn.addEventListener('click', function () {
+      modal.style.display = 'block';
+      console.log('btn clicked')
+    });
+  });
+
+  modalCloseBtns.forEach(btn => {
+    const target = btn.getAttribute('data-target');
+    const modal = document.getElementById(target);
+    btn.addEventListener('click', function () {
+      modal.style.display = 'none';
+      console.log('btn clicked')
+    });
+  });
+
+})();
