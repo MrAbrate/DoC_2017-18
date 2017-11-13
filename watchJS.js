@@ -1,64 +1,25 @@
-const fs = require('fs-extra');
-const UglifyJS = require("uglify-es");
+const bundler = require('./bundler.js');
 
-
-class Bundle {
-  constructor(src, dest) {
-    this.source = src;
-    this.dest = dest;
-    this.code = '';
-  }
-
-  forEachSrc(fn) {
-    this.source.forEach(function (filename) {
-      fn(filename, this)
-    }, this);
-  }
-
-  concatinate() {
-    this.source.forEach(function (filename) {
-      this.code += fs.readFileSync(dir + filename, {encoding: 'utf-8'});
-    }, this);
-
-    const minified = UglifyJS.minify(this.code);
-    this.code = '';
-
-    fs.outputFile(__dirname + '/public/js/' + this.dest, minified.code, err => {
-      if (err) throw err; // => null
-      console.log(this.dest + " Saved");
-    });
-  }
-}
-
-
-const dir = __dirname + '/src/js/';
 const jsBundles = [
-    new Bundle(['main.js'], 'bundle.js'),
-    new Bundle(['sketches/home-sketch.js'], 'sketches/home-sketch.js'),
-    new Bundle(
-      [
-        'share/scratch-gallery.js',
-        'share/share-modal.js',
-        'share/falling-balls-sketch.js'
-      ],
-      'share.js'
-    ),
-    new Bundle(['signup.js'], 'signup.js'),
-    new Bundle(['sketches/color-picker.js'], 'sketches/color-picker.js'),
-    new Bundle(['faq/firebase-setup.js'], 'faq.js')
+  { src: ['main.js'], dest: 'bundle.js' },
+  { src: 'sketches/home-sketch.js', dest: 'sketches/home-sketch.js' },
+  {
+    src: [
+      'share/scratch-gallery.js',
+      'share/share-modal.js',
+      'share/falling-balls-sketch.js'
+    ],
+    dest: 'share.js'
+  },
+  { src: 'sketches/color-picker.js', dest: 'sketches/color-picker.js' },
+  { src: ['firebase-setup.js', 'faq/questions.js'], dest: 'faq.js' },
+  { src: ['firebase-setup.js', 'signup/main.js'], dest: 'signup.js' }
 ];
 
-
-
-exports.start = function () {
-  jsBundles.forEach(bundle => {
-    bundle.concatinate();
-    bundle.source.forEach(filename => {
-      fs.watch(dir + filename, {encoding: 'utf-8'},(eventType, filename) => {
-        if (eventType === 'change') {
-          bundle.concatinate();
-        }
-      });
-    });
+exports.watch = function () {
+  jsBundles.forEach(sources => {
+    bundler.create(sources)
+      .concat()
+      .watch();
   });
 };

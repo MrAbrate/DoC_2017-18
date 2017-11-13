@@ -1,9 +1,3 @@
-firebase.initializeApp({
-  apiKey: 'AIzaSyBoBcy9fEMAG3WZnHmZ4ocO59pcYlUQdeI',
-  authDomain: 'day-of-code-20a1f.firebaseapp.com',
-  projectId: 'day-of-code-20a1f'
-});
-
 // Initialize Cloud Firestore through Firebase
 const db = firebase.firestore();
 console.log('db');
