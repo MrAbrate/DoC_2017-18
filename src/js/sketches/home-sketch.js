@@ -1,4 +1,5 @@
 const dots = [];
+const bkgrd = getComputedStyle(document.body)['background-color'];
 
 function setup() {
   const myCanvas = createCanvas(windowWidth,windowHeight);
@@ -10,7 +11,7 @@ function setup() {
 }
 
 function draw() {
-  background(255, 100);
+  background(bkgrd);
   dots.forEach(dot => {
     dot.move();
     dot.show();

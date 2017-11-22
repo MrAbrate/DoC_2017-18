@@ -3,29 +3,3 @@ $light-color: #f4f8ff;
 $green: #29b229;
 $blue: #4286f4;
 $scratch-blue: #25aff4;
-
-.light {
-  background: rgba(darken($light-color, 5%), 0.5);
-  color: $dark-color;
-  a {
-    color: $dark-color;
-    text-decoration: none;
-    &:hover {
-      color: desaturate(darken($light-color, 60%), 20%);
-      text-decoration: underline;
-    }
-  }
-}
-
-.dark {
-  background: $dark-color;
-  color: $light-color;
-  a {
-    color: $light-color;
-    text-decoration: none;
-    &:hover {
-      color: desaturate(lighten($dark-color, 60%), 20%);
-      text-decoration: underline;
-    }
-  }
-}
