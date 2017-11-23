@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const pug = require('pug');
+const settings = require('./settings.json');
 const pugFiles = [
   {
     source: './src/index.pug',
@@ -14,8 +15,8 @@ const pugFiles = [
     dest: './public/faq/index.html'
   },
   {
-    source: './src/share.pug',
-    dest: './public/share/index.html'
+    source: './src/gallery.pug',
+    dest: './public/gallery/index.html'
   },
   {
     source: './src/color-picker.pug',
@@ -35,7 +36,7 @@ exports.start = function () {
 function renderFile(file) {
   let code;
   try {
-    code = pug.renderFile(file.source);
+    code = pug.renderFile(file.source, {domain: settings.domain});
   } catch(err) {
     console.log(err);
   }

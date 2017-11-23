@@ -1,7 +1,7 @@
 var r = 0;
 var bubbleR = 0;
 var bubbles = [];
-
+const bkgrd = getComputedStyle(document.body)['background-color'];
 
 function setup() {
   const myCanvas = createCanvas(windowWidth, windowHeight);
@@ -10,7 +10,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(bkgrd);
   if (r < 80) {
     const alpha = map(r, 0, 80, 255, 0);
     stroke(255, 0, 0, alpha);

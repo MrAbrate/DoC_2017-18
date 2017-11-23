@@ -5,11 +5,11 @@ const jsBundles = [
   { src: 'sketches/home-sketch.js', dest: 'sketches/home-sketch.js' },
   {
     src: [
-      'share/scratch-gallery.js',
-      'share/share-modal.js',
-      'share/falling-balls-sketch.js'
+      //'gallery/scratch-gallery.js',
+      'gallery/share-modal.js',
+      'gallery/falling-balls-sketch.js'
     ],
-    dest: 'share.js'
+    dest: 'gallery.js'
   },
   { src: 'sketches/color-picker.js', dest: 'sketches/color-picker.js' },
   { src: ['firebase-setup.js', 'faq/questions.js'], dest: 'faq.js' },

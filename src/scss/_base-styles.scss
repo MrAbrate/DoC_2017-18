@@ -5,12 +5,15 @@ html {
   position: relative;
 }
 body {
-  background: #ede1c7;
+  background: $paper;
   position: relative;
   margin: 0;
   min-height: 100vh;
   font-family: 'Dosis', sans-serif;
   font-size: 1.1rem;
+}
+img {
+  max-width: 100%;
 }
 
 .container {
@@ -64,10 +67,25 @@ nav {
     margin-left: $white-space;
   }
 }
+section {
+  margin-top: $white-space*3;
+  padding: $white-space;
+}
 
 #canvas {
   z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
+}
+
+
+
+/*Typography */
+.small {
+  font-size: 0.7em;
+  font-weight: normal;
+}
+.text-center {
+  text-align: center;
 }

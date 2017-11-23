@@ -1,0 +1,91 @@
+.scratch-section {
+  background: white;
+  padding: 0 0 $white-space * 2;
+  h2 {
+    background: $scratch-blue;
+    color: white;
+    padding: 16px;
+    margin: 0;
+  }
+  p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.thimble-section {
+  background: linear-gradient(160deg,#166f41,#4bc771);
+  &,
+  a {
+    color: white;
+  }
+}
+
+.nasa-3d-section {
+  background:  radial-gradient(ellipse at top right, #a8a8a8 0%,#ffffff 49%,#ffffff 84%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  h2 > * {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+.thimble-projects,
+.nasa-3d-projects {
+  display: inline-block;
+  min-width: 500px;
+  text-align: left;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+.project {
+  padding: 12px;
+  display: block;
+  text-decoration: none;
+  transition: color 0.3s;
+  transition: box-shadow 0.5s;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px #000;
+    border-bottom: 2px solid transparent;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+}
+.project-title,
+.project-author {
+  display: inline;
+}
+.project-author {
+  margin-left: 1em;
+}
+
+
+
+/* Old
+
+#scratch-gallery {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  max-height: 500px;
+  overflow-y: scroll;
+  border: 2px solid $scratch-blue;
+  padding: 0px;
+  & > li {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+    border: 2px solid $scratch-blue;
+    padding: 20px;
+    transition: background-color 0.5s;
+    &:hover {
+      background: transparentize($scratch-blue, 0.5);
+    }
+  }
+}
+*/
