@@ -22,6 +22,19 @@
   }
 }
 
+.avatar-section {
+  min-height: 300px;
+  background: url('/img/vector-background.png') white;
+  background-size: 100%;
+  background-position: 0 80px;
+  background-repeat: no-repeat;
+  p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .nasa-3d-section {
   background:  radial-gradient(ellipse at top right, #a8a8a8 0%,#ffffff 49%,#ffffff 84%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   h2 > * {
@@ -30,8 +43,17 @@
   }
 }
 
+.app-lab-section {
+  background: #00adbc;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
 .thimble-projects,
-.nasa-3d-projects {
+.nasa-3d-projects,
+.app-lab-projects {
   display: inline-block;
   min-width: 500px;
   text-align: left;
