@@ -18,7 +18,7 @@ block content
     
     section.thimble-section
       h2 Thimble Projects #[span.small (html)]
-      .thimble-projects
+      .projects
         a.project(href="#" target="_blank")
           .project-title Example 1
           .project-author John Doe
@@ -29,14 +29,14 @@ block content
           .project-title Example 2
           .project-author Jane Doe
       .text-center
-        .more-btn Show more
+        .red-btn Show more
     
     section.nasa-3d-section
       h2
         img(src="/img/tinkercad-logo.png")
         span 3D Models
-        span.small (2 for the Crew Challenge
-      .nasa-3d-projects
+        span.small (2 for the Crew Challenge)
+      .projects
         a.project(href="#" target="_blank")
           .project-title Example 1
           .project-author John Doe
@@ -47,7 +47,22 @@ block content
           .project-title Example 2
           .project-author Jane Doe
       .text-center
-        .more-btn Show more
+        .red-btn Show more
+        
+    section.p5-section
+      h2 p5* Projects
+      .projects
+        a.project(href="#" target="_blank")
+          .project-title Example 1
+          .project-author John Doe
+        a.project(href="#" target="_blank")
+          .project-title Example 2
+          .project-author Jane Doe
+        a.project(href="#" target="_blank")
+          .project-title Example 2
+          .project-author Jane Doe
+      .text-center
+        .white-btn Show more
 
     section.avatar-section
       h2 Personal Avatars
@@ -55,7 +70,7 @@ block content
     
     section.app-lab-section
       h2 App Lab
-      .app-lab-projects
+      .projects
         a.project(href="#" target="_blank")
           .project-title Example 1
           .project-author John Doe
@@ -66,7 +81,7 @@ block content
           .project-title Example 2
           .project-author Jane Doe
       .text-center
-        .more-btn Show more
+        .red-btn Show more
   
   include inc/share-modal.pug
 block scripts

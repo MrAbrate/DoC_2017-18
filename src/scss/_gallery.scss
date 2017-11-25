@@ -1,3 +1,26 @@
+.scratch-section,
+.thimble-section,
+.avatar-section,
+.p5-section,
+.nasa-3d-section,
+.app-lab-section {
+  min-height: 300px;
+
+  p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.thimble-section,
+.p5-section,
+.app-lab-section {
+  &, a {
+    color: white;
+  }
+}
+
 .scratch-section {
   background: white;
   padding: 0 0 $white-space * 2;
@@ -7,60 +30,39 @@
     padding: 16px;
     margin: 0;
   }
-  p {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
-.thimble-section {
-  background: linear-gradient(160deg,#166f41,#4bc771);
-  &,
-  a {
-    color: white;
-  }
-}
+.thimble-section { background: linear-gradient(160deg,#166f41,#4bc771); }
+.p5-section { background: #ed225d; }
+.app-lab-section { background: #00adbc; }
 
 .avatar-section {
-  min-height: 300px;
   background: url('/img/vector-background.png') white;
   background-size: 100%;
   background-position: 0 80px;
   background-repeat: no-repeat;
-  p {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 .nasa-3d-section {
-  background:  radial-gradient(ellipse at top right, #a8a8a8 0%,#ffffff 49%,#ffffff 84%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: radial-gradient(ellipse at top right, #a8a8a8 0%,#ffffff 49%,#ffffff 84%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   h2 > * {
     margin-left: 8px;
     margin-right: 8px;
   }
 }
 
-.app-lab-section {
-  background: #00adbc;
-  color: white;
-  a {
-    color: white;
-  }
-}
 
-.thimble-projects,
-.nasa-3d-projects,
-.app-lab-projects {
+
+.projects {
   display: inline-block;
   min-width: 500px;
   text-align: left;
   border: 2px solid rgba(0, 0, 0, 0.1);
 }
+
 .project {
   padding: 12px;
+  color: $dark-color;
   display: block;
   text-decoration: none;
   transition: color 0.3s;

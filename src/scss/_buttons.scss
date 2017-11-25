@@ -1,5 +1,6 @@
 .btn {
   padding: 12px 24px;
+  margin: $white-space;
   text-decoration: none;
   display: inline-block;
   transition: box-shadow 0.3s, background-color 0.3s;
@@ -52,13 +53,20 @@
     background: darken($blue, 5%);
   }
 }
-.more-btn {
+.red-btn {
   @extend .btn;
-  margin-top: $white-space;
   background: crimson;
   color: white;
   &:hover {
     background: darken(crimson, 5%);
+  }
+}
+.white-btn {
+  @extend .btn;
+  background: white;
+  color: $dark-color;
+  &:hover {
+    background: #DDD;
   }
 }
 
