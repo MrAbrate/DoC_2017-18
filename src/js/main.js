@@ -7,7 +7,6 @@ const ajax = {
       request.onload = function() {
         if (this.status >= 200 && this.status < 400) {
           // Success!
-          var resp = this.response;
           resolve(this.response);
         } else {
           // We reached our target server, but it returned an error
@@ -25,6 +24,17 @@ const ajax = {
   }
 };
 
+function removeHTML(selector, parent) {
+  const searchNode = parent || document;
+  const elements = searchNode.querySelectorAll(selector);
+  for (let i = 0; i < elements.length; i += 1) {
+    const el = elements[i];
+    el.parentNode.removeChild(el);
+  }
+}
+
+
+// Modals
 (function () {
   const modalBtns = document.querySelectorAll('.modal-btn');
   const modalCloseBtns = document.querySelectorAll('.close-modal');
@@ -46,5 +56,18 @@ const ajax = {
       console.log('btn clicked')
     });
   });
+})();
 
+// Random Colors
+(() => {
+  const selectors = ['.activity'];
+  selectors.forEach(selector => {
+    const elements = document.querySelectorAll(selector);
+    for (let i = 0; i < elements.length; i += 1) {
+      const el = elements[i];
+      const hue = Math.floor(Math.random() * 360);
+      const color = `hsl(${ hue }, 90%, 65%)`;
+      el.style.backgroundColor = color;
+    }
+  });
 })();

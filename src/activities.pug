@@ -1,0 +1,22 @@
+//- activities.pug
+extends layout.pug
+
+block content
+  .container.text-center
+    h1 Activities
+    .activities
+      a.activity(href="#")
+        h3 Two for the Crew #[.small (TinkerCAD)]
+      a.activity(href="#")
+        h3 Make a Website
+      a.activity(href="#")
+        h3 Drawing with JavaScript
+      a.activity(href="#")
+        h3 Scratch Animation
+      a.activity(href="#")
+        h3 Scratch Games
+      a.activity(href="#")
+        h3 Choose Your Own Adventure 
+block scripts
+  //- script(src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js')
+  script(src='/js/bundle.js')

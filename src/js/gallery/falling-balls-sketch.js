@@ -11,26 +11,11 @@ function setup() {
 
 function draw() {
   background(bkgrd);
-  if (r < 80) {
-    const alpha = map(r, 0, 80, 255, 0);
-    stroke(255, 0, 0, alpha);
-    strokeWeight(5);
-    noFill();
-    ellipse(mouseX, mouseY, r);
-  }
-  if (r > 400) {
-    r = 0;
-  }
-  r += 1;
+  const mouseSpeed = getMouseSpeed();
+  const randomness = random(0, 80);
 
-  if (mouseIsPressed) {
-    bubbleR += 1;
-    stroke('black');
-    noFill();
-    ellipse(mouseX, mouseY, bubbleR);
-  } else if (bubbleR > 0) {
-    bubbles.push(new Bubble(mouseX, mouseY, bubbleR, random(360)));
-    bubbleR = 0;
+  if (mouseSpeed > randomness) {
+    bubbles.push(new Bubble(mouseX, mouseY, random(5, 30), random(360)));
   }
 
   for (let i = bubbles.length - 1; i >= 0; i -= 1) {
@@ -47,7 +32,7 @@ class Bubble {
   constructor(x, y, size, h) {
     this.pos = createVector(x, y);
     this.vel = createVector();
-    this.acc = createVector(0, 0.3);
+    this.acc = createVector(0, map(size, 5, 30, 0.1, 1));
     this.size = size;
     this.color = color('hsl(' + floor(h) + ', 80%, 65%)');
   }
@@ -68,7 +53,12 @@ class Bubble {
 
 
 
-
+function getMouseSpeed() {
+  const m = createVector(mouseX, mouseY);
+  const pm = createVector(pmouseX, pmouseY);
+  const dif = m.sub(pm);
+  return dif.mag();
+}
 
 
 

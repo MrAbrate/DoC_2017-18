@@ -1,9 +1,7 @@
 .scratch-section,
-.thimble-section,
-.avatar-section,
-.p5-section,
+.text-section,
 .nasa-3d-section,
-.app-lab-section {
+.picture-section {
   min-height: 300px;
 
   p {
@@ -13,16 +11,22 @@
   }
 }
 
-.thimble-section,
-.p5-section,
-.app-lab-section {
-  &, a {
+.text-section {
+  background: linear-gradient(160deg,#166f41,#4bc771);
+  color: white;
+  .project {
+    background: transparent;
+  }
+  a {
     color: white;
+    &:hover {
+      color: $dark-color;
+    }
   }
 }
 
 .scratch-section {
-  background: white;
+  background: rgba(255, 255, 255, 0.6);
   padding: 0 0 $white-space * 2;
   h2 {
     background: $scratch-blue;
@@ -32,32 +36,32 @@
   }
 }
 
-.thimble-section { background: linear-gradient(160deg,#166f41,#4bc771); }
-.p5-section { background: #ed225d; }
-.app-lab-section { background: #00adbc; }
-
-.avatar-section {
-  background: url('/img/vector-background.png') white;
-  background-size: 100%;
-  background-position: 0 80px;
-  background-repeat: no-repeat;
-}
 
 .nasa-3d-section {
-  background: radial-gradient(ellipse at top right, #a8a8a8 0%,#ffffff 49%,#ffffff 84%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(135deg, #ff3232 3%,#eeff32 23%,#28ff50 45%,#2365ff 73%,#cb23ff 100%);
   h2 > * {
     margin-left: 8px;
     margin-right: 8px;
   }
 }
 
+.picture-section {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0 0 $white-space * 2;
+  h2 {
+    background: tomato;
+    color: white;
+    padding: 16px;
+    margin: 0;
+  }
+}
 
 
 .projects {
   display: inline-block;
   min-width: 500px;
   text-align: left;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: $light-border;
 }
 
 .project {
@@ -67,9 +71,11 @@
   text-decoration: none;
   transition: color 0.3s;
   transition: box-shadow 0.5s;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  border-bottom: $light-border;
+  background: rgba(255, 255, 255, 0.3);
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 15px #000;
     border-bottom: 2px solid transparent;
   }

@@ -7,20 +7,16 @@ const pugFiles = [
     dest: './public/index.html'
   },
   {
-    source: './src/signup.pug',
-    dest: './public/signup/index.html'
-  },
-  {
-    source: './src/faq.pug',
-    dest: './public/faq/index.html'
-  },
-  {
     source: './src/gallery.pug',
     dest: './public/gallery/index.html'
   },
   {
-    source: './src/color-picker.pug',
-    dest: './public/color-picker/index.html'
+    source: './src/coordinate-locator.pug',
+    dest: './public/coordinate-locator/index.html'
+  },
+  {
+    source: './src/activities.pug',
+    dest: './public/activities/index.html'
   }
 ];
 

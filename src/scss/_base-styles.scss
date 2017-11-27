@@ -7,7 +7,7 @@ html {
 body {
   background: $paper;
   position: relative;
-  margin: 0;
+  margin: 0 0 300px;
   min-height: 100vh;
   font-family: 'Dosis', sans-serif;
   font-size: 1.1rem;
@@ -88,4 +88,7 @@ section {
 }
 .text-center {
   text-align: center;
+}
+.text-left {
+  text-align: left;
 }

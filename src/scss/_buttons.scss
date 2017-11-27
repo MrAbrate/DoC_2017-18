@@ -53,7 +53,8 @@
     background: darken($blue, 5%);
   }
 }
-.red-btn {
+.red-btn,
+.more-btn {
   @extend .btn;
   background: crimson;
   color: white;
@@ -79,5 +80,41 @@
   transition: border 0.3s;
   &:hover {
     border: 1px solid #999;
+  }
+}
+
+.image-gallery-button {
+  @extend .btn;
+  color: $scratch-blue;
+  animation-name: pulse-green;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  &:hover {
+    background: #68e268;
+    color: $dark-color;
+    animation: none;
+  }
+}
+
+@keyframes pulse-green {
+  0% {
+    background-color: rgba(255,99,71, 0);
+    box-shadow: none;
+    color: $scratch-blue;
+  }
+  40% {
+    background-color: rgba(255,99,71, 0);
+    box-shadow: none;
+    color: $scratch-blue;
+  }
+  70% {
+    background-color: rgba(255,99,71, 1);
+    box-shadow: 0 2px 17px black;
+    color: white;
+  }
+  100% {
+    background-color: rgba(255,99,71, 0);
+    box-shadow: none;
+    color: $scratch-blue;
   }
 }

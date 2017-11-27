@@ -4,32 +4,23 @@ extends layout.pug
 block content
   #canvas
   .container.text-center
-    #share-modal-btn(class="modal-btn" data-target="share-modal") Share your code!
     h1 Gallery
     
     section.scratch-section
       h2 Scratch Projects
-      p.readable-text-center Visit the Day of Code  #[a(href="#" target="_blank") Scratch Studio] to see what other students have made and share your own project. #[br]If you need help sharing your project, checkout the #[a(href="https://wiki.scratch.mit.edu/wiki/Studio#Adding_Projects" target="_blank") Scratch Wiki] page.
-      a(href="#" target="_blank").scratch-studio-btn: img(src="/img/scratch-btn.gif")
+      p Visit the Day of Code  #[a(href="https://scratch.mit.edu/studios/4387897/" target="_blank") Scratch Studio] to see what other students have made and share your own project. #[br]If you need help sharing your project, checkout the #[a(href="https://wiki.scratch.mit.edu/wiki/Studio#Adding_Projects" target="_blank") Scratch Wiki] page.
+      a(href="https://scratch.mit.edu/studios/4387897/" target="_blank").scratch-studio-btn: img(src="/img/scratch-btn.gif")
     
       // Load projects from depricated Scratch API
       //ul#scratch-gallery
       // div(style="text-align:center;"): #load-more-scratch-projects More
     
-    section.thimble-section
-      h2 Thimble Projects #[span.small (html)]
+    section.text-section
+      h2 Text Projects &amp; App Lab
       .projects
-        a.project(href="#" target="_blank")
-          .project-title Example 1
-          .project-author John Doe
-        a.project(href="#" target="_blank")
-          .project-title Example 2
-          .project-author Jane Doe
-        a.project(href="#" target="_blank")
-          .project-title Example 2
-          .project-author Jane Doe
+        .loading-msg Loading...
       .text-center
-        .red-btn Show more
+        .more-btn Show more
     
     section.nasa-3d-section
       h2
@@ -37,53 +28,15 @@ block content
         span 3D Models
         span.small (2 for the Crew Challenge)
       .projects
-        a.project(href="#" target="_blank")
-          .project-title Example 1
-          .project-author John Doe
-        a.project(href="#" target="_blank")
-          .project-title Example 2
-          .project-author Jane Doe
-        a.project(href="#" target="_blank")
-          .project-title Example 2
-          .project-author Jane Doe
+        .loading-msg Loading...
       .text-center
-        .red-btn Show more
+        .more-btn Show more
         
-    section.p5-section
-      h2 p5* Projects
-      .projects
-        a.project(href="#" target="_blank")
-          .project-title Example 1
-          .project-author John Doe
-        a.project(href="#" target="_blank")
-          .project-title Example 2
-          .project-author Jane Doe
-        a.project(href="#" target="_blank")
-          .project-title Example 2
-          .project-author Jane Doe
-      .text-center
-        .white-btn Show more
-
-    section.avatar-section
-      h2 Personal Avatars
-      p Visit the #[a(href="#" target="_blank") Persnal Avatar Scratch Studio] to see what characters have been created by Village students. Share your creation and create a story with your favorite character.
+    section.picture-section
+      h2 Pictures
+      p See students create musical instruments with Makey Makey and get some inspiration for your next Scratch story from the personal avatar gallery.
+      a.image-gallery-button Click here
     
-    section.app-lab-section
-      h2 App Lab
-      .projects
-        a.project(href="#" target="_blank")
-          .project-title Example 1
-          .project-author John Doe
-        a.project(href="#" target="_blank")
-          .project-title Example 2
-          .project-author Jane Doe
-        a.project(href="#" target="_blank")
-          .project-title Example 2
-          .project-author Jane Doe
-      .text-center
-        .red-btn Show more
-  
-  include inc/share-modal.pug
 block scripts
   script(src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js')
   script(src='/js/bundle.js')
