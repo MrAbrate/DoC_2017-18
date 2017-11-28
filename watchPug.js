@@ -17,6 +17,30 @@ const pugFiles = [
   {
     source: './src/activities.pug',
     dest: './public/activities/index.html'
+  },
+  {
+    source: './src/activities/choose-your-own-adventure.pug',
+    dest: './public/activities/choose-your-own-adventure/index.html'
+  },
+  {
+    source: './src/activities/html.pug',
+    dest: './public/activities/html/index.html'
+  },
+  {
+    source: './src/activities/p5js.pug',
+    dest: './public/activities/p5js/index.html'
+  },
+  {
+    source: './src/activities/scratch-animations.pug',
+    dest: './public/activities/scratch-animations/index.html'
+  },
+  {
+    source: './src/activities/scratch-games.pug',
+    dest: './public/activities/scratch-games/index.html'
+  },
+  {
+    source: './src/activities/two-for-the-crew.pug',
+    dest: './public/activities/two-for-the-crew/index.html'
   }
 ];
 
