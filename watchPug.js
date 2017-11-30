@@ -41,6 +41,10 @@ const pugFiles = [
   {
     source: './src/activities/two-for-the-crew.pug',
     dest: './public/activities/two-for-the-crew/index.html'
+  } ,
+  {
+    source: './src/activities/makey-makey.pug',
+    dest: './public/activities/makey-makey/index.html'
   }
 ];
 
